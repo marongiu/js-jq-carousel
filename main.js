@@ -2,11 +2,20 @@
 
 var sliderNext = $('.next i') // Seleziono angle-right
 var sliderPrev = $('.prev i') // Seleziono angle-left
-var image = $('.images img.active') // Seleziono immagini
-var circle = $('nav i')
+
+
 
 
 sliderNext.click(function() {
-    image.removeClass('active');
-    image.next().addClass('active');
+  var image = $('.images img.active') // Seleziono l' immagine con la classe active
+  image.removeClass('active'); // La rimuovo
+  image.next().addClass('active'); // Selezioni la successiva e aggiungo la classe active
+
+  var circle = $('.nav i.active')
+  circle.removeClass('active'); // La rimuovo
+  circle.next().addClass('active'); // Selezioni la successiva e aggiungo la classe active
+
+  if (image.hasClass('last')) {
+    var firstImage = $('.images img.first').addClass('active');
+  }
 })
