@@ -4,7 +4,33 @@ var sliderNext = $('.next i') // Seleziono angle-right
 var sliderPrev = $('.prev i') // Seleziono angle-left
 
 
+// Selezioni con click
 sliderNext.click(function() {
+  next();
+})
+
+sliderPrev.click(function() {
+  prev()
+})
+
+
+// Keyboard
+$(document.documentElement).keyup(function (e) {
+
+  if (e.keyCode == 39)
+  {
+    next();
+  }
+
+  if (e.keyCode == 37)
+  {
+    prev();
+  }
+
+});
+
+// Funzioni
+function next() {
   var image = $('.images img.active'); // Seleziono l' immagine con la classe active
   image.removeClass('active'); // La rimuovo
   image.next().addClass('active'); // Selezioni la successiva e aggiungo la classe active
@@ -19,10 +45,10 @@ sliderNext.click(function() {
     var firstImage = $('.images img.first').addClass('active');
     var firstCircle = $('.nav i.first').addClass('active');
   }
-})
+}
 
-// Faccio la stessa cosa con l'angle left ma ribaltando le condizioni last/first
-sliderPrev.click(function() {
+// Faccio la stessa cosa di sopra ma ribaltando le condizioni last/first
+function prev() {
   var image = $('.images img.active'); // Seleziono l' immagine con la classe active
   image.removeClass('active'); // La rimuovo
   image.prev().addClass('active'); // Selezioni la successiva e aggiungo la classe active
@@ -37,8 +63,7 @@ sliderPrev.click(function() {
     var firstImage = $('.images img.last').addClass('active');
     var firstCircle = $('.nav i.last').addClass('active');
   }
-})
-
+}
 
 // Funzioni aggiuntive grafiche
 
