@@ -67,16 +67,29 @@ function prev() {
 
 // Funzioni aggiuntive grafiche
 
-sliderNext.hover(function(event) {
+// Bottone next
+sliderNext.hover(function() {
   sliderNext.css('transform', 'scale(2)');
-  sliderNext.css('color', '#7EA2F6');
+  sliderNext.css('color', '#c65b68');
+}, function() {
+  sliderNext.css('transform', 'scale(1.2)');
+  sliderNext.css('color', 'black');
 });
 
-sliderPrev.hover(function(event) {
+// Bottone prev
+sliderPrev.hover(function() {
   sliderPrev.css('transform', 'scale(2)');
-  sliderPrev.css('color', '#7EA2F6');
+  sliderPrev.css('color', '#c65b68');
+}, function() {
+  sliderPrev.css('transform', 'scale(1.2)');
+  sliderPrev.css('color', 'black');
 });
 
+// Immagini
 var images = $('.images img');
-
+images.hover(function() {
+  images.css('transform', 'scale(1.2)')
+}, function() {
+  images.css('transform', 'scale(1)')
+});
 images.css('filter', 'hue-rotate(55deg) contrast(120%)')
