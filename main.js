@@ -5,11 +5,11 @@ var sliderPrev = $('.prev i') // Seleziono angle-left
 
 
 sliderNext.click(function() {
-  var image = $('.images img.active') // Seleziono l' immagine con la classe active
+  var image = $('.images img.active'); // Seleziono l' immagine con la classe active
   image.removeClass('active'); // La rimuovo
   image.next().addClass('active'); // Selezioni la successiva e aggiungo la classe active
 
-  var circle = $('.nav i.active')
+  var circle = $('.nav i.active');
   circle.removeClass('active'); // La rimuovo
   circle.next().addClass('active'); // Selezioni la successiva e aggiungo la classe active
 
@@ -23,11 +23,11 @@ sliderNext.click(function() {
 
 // Faccio la stessa cosa con l'angle left ma ribaltando le condizioni last/first
 sliderPrev.click(function() {
-  var image = $('.images img.active') // Seleziono l' immagine con la classe active
+  var image = $('.images img.active'); // Seleziono l' immagine con la classe active
   image.removeClass('active'); // La rimuovo
   image.prev().addClass('active'); // Selezioni la successiva e aggiungo la classe active
 
-  var circle = $('.nav i.active')
+  var circle = $('.nav i.active');
   circle.removeClass('active'); // La rimuovo
   circle.prev().addClass('active'); // Selezioni la successiva e aggiungo la classe active
 
@@ -38,3 +38,20 @@ sliderPrev.click(function() {
     var firstCircle = $('.nav i.last').addClass('active');
   }
 })
+
+
+// Funzioni aggiuntive grafiche
+
+sliderNext.hover(function(event) {
+  sliderNext.css('transform', 'scale(2)');
+  sliderNext.css('color', '#7EA2F6');
+});
+
+sliderPrev.hover(function(event) {
+  sliderPrev.css('transform', 'scale(2)');
+  sliderPrev.css('color', '#7EA2F6');
+});
+
+var images = $('.images img');
+
+images.css('filter', 'hue-rotate(55deg) contrast(120%)')
